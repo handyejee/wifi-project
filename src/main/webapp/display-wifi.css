@@ -1,0 +1,49 @@
+.wifi-info-table {
+    width: 100%;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    align-items: center;
+    padding: 0;
+    border-collapse: collapse;
+    font-size: small;
+}
+
+.list-header {
+    border: 1px solid lightgray;
+    height: 40px;
+    margin: 0;
+    text-align: center;
+    background-color: #04c588;
+    color: white;
+    border-collapse: collapse;
+}
+
+th {
+    border: 1px solid lightgray;
+}
+
+td {
+    border: 1px solid lightgray;
+    height: 40px;
+    margin: 0;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f2f2f2;
+}
+
+.retrieve-msg{
+    text-align: center;
+}
+
+.delete-btn{
+    justify-content: center
+}
+
+
+
+
