@@ -31,7 +31,6 @@ public class SelectDistance extends HttpServlet {
         if (lat != null && lnt != null) {
             double latitude = Double.parseDouble(lat); // String으로 받아온 값 double 로 변경
             double longitude = Double.parseDouble(lnt);
-            Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis()); // 현재 시간
 
             PreparedStatement statement = null; // sql prepared로 실행하기 위해 객체 선언
             ResultSet rs = null; // 쿼리 결과 저장하기 위한 객체 선언
@@ -74,10 +73,6 @@ public class SelectDistance extends HttpServlet {
 
                 List<WIFILocation> locationList = new ArrayList<>();
                 System.out.println("locationlist " + locationList);
-
-                // 조회 시점을 세션에 저장
-                HttpSession session = request.getSession();
-                session.setAttribute("retrievedAt", currentTimestamp);
 
                 while (rs.next()) { // 객체에서 다음 행이 있는지 확인 (true, false 반환)
                     // 데이터베이스에서 각 행 가져오기

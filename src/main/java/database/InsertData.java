@@ -7,8 +7,8 @@ public class InsertData {
     public int InsertWifiInfo(ResultDto resultDto) {
         // INSERT 구문
         String sql = "INSERT INTO wifi\n" +
-                "    (X_SWIFI_MGR_NO, X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, X_SWIFI_ADRES2,X_SWIFI_INSTL_FLOOR,X_SWIFI_INSTL_TY,X_SWIFI_INSTL_MBY,X_SWIFI_SVC_SE,X_SWIFI_CMCWR,X_SWIFI_CNSTC_YEAR,X_SWIFI_INOUT_DOOR,X_SWIFI_REMARS3,LAT,LNT,WORK_DTTM,RTV_TIME\n" +
-                ") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+                "    (X_SWIFI_MGR_NO, X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, X_SWIFI_ADRES2,X_SWIFI_INSTL_FLOOR,X_SWIFI_INSTL_TY,X_SWIFI_INSTL_MBY,X_SWIFI_SVC_SE,X_SWIFI_CMCWR,X_SWIFI_CNSTC_YEAR,X_SWIFI_INOUT_DOOR,X_SWIFI_REMARS3,LAT,LNT,WORK_DTTM\n" +
+                ") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
         //2. 커넥션 객체 생성
         ResultSet rs = null;
@@ -36,10 +36,6 @@ public class InsertData {
                     statement.setBigDecimal(14, row.getLAT());
                     statement.setBigDecimal(15, row.getLNT());
                     statement.setString(16, row.getWORK_DTTM());
-
-                    // 현재시간 조회 해서 db에 넣기
-                    Timestamp currentTime = new Timestamp(System.currentTimeMillis());
-                    statement.setTimestamp(17, currentTime);
 
                     int rowsAffected = statement.executeUpdate();
                     totalAffected += rowsAffected;

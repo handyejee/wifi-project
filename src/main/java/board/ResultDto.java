@@ -41,6 +41,7 @@ public class ResultDto {
             private java.math.BigDecimal LAT;
             private java.math.BigDecimal LNT;
             private String WORK_DTTM;
+
         }
     }
 }
